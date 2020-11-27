@@ -1,0 +1,6 @@
+C:\Users\pham_\OneDrive\Documents\BTS AN 2\Projet C#\BLL\bin\Debug\BLL.dll
+C:\Users\pham_\OneDrive\Documents\BTS AN 2\Projet C#\BLL\bin\Debug\BLL.pdb
+C:\Users\pham_\OneDrive\Documents\BTS AN 2\Projet C#\BLL\obj\Debug\BLL.csprojAssemblyReference.cache
+C:\Users\pham_\OneDrive\Documents\BTS AN 2\Projet C#\BLL\obj\Debug\BLL.csproj.CoreCompileInputs.cache
+C:\Users\pham_\OneDrive\Documents\BTS AN 2\Projet C#\BLL\obj\Debug\BLL.dll
+C:\Users\pham_\OneDrive\Documents\BTS AN 2\Projet C#\BLL\obj\Debug\BLL.pdb
