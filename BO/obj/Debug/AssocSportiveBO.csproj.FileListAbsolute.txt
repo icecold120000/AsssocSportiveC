@@ -1,0 +1,6 @@
+C:\Users\pham_\OneDrive\Documents\BTS AN 2\Projet C#\BO\bin\Debug\BO.dll
+C:\Users\pham_\OneDrive\Documents\BTS AN 2\Projet C#\BO\bin\Debug\BO.pdb
+C:\Users\pham_\OneDrive\Documents\BTS AN 2\Projet C#\BO\obj\Debug\AssocSportiveBO.csprojAssemblyReference.cache
+C:\Users\pham_\OneDrive\Documents\BTS AN 2\Projet C#\BO\obj\Debug\AssocSportiveBO.csproj.CoreCompileInputs.cache
+C:\Users\pham_\OneDrive\Documents\BTS AN 2\Projet C#\BO\obj\Debug\BO.dll
+C:\Users\pham_\OneDrive\Documents\BTS AN 2\Projet C#\BO\obj\Debug\BO.pdb

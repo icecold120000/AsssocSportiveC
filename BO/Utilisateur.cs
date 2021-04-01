@@ -13,15 +13,16 @@ namespace BO
         private string mdp_Utilisateur;
         private char droit_Utilisateur;
 
-        // Consctructeur du login
-        public Utilisateur(int id, string login)
-        {
-            id_Utilisateur = id;
-            login_Utilisateur = login;
-        }
 
         // Constructuer de l'Utilisateur
-        public Utilisateur(int id, string login,string mdp,char droit)
+        public Utilisateur(string login,string mdp,char droit)
+        {
+            login_Utilisateur = login;
+            mdp_Utilisateur = mdp;
+            droit_Utilisateur = droit;
+
+        }
+        public Utilisateur(int id, string login, string mdp, char droit)
         {
             id_Utilisateur = id;
             login_Utilisateur = login;
@@ -29,10 +30,10 @@ namespace BO
             droit_Utilisateur = droit;
 
         }
-
         public int Id { get => id_Utilisateur; set => id_Utilisateur = value; }
         public string Login { get => login_Utilisateur; set => login_Utilisateur = value; }
         public string Mdp { get => mdp_Utilisateur; set => mdp_Utilisateur = value; }
         public char Droit { get => droit_Utilisateur; set => droit_Utilisateur = value; }
+
     }
 }
