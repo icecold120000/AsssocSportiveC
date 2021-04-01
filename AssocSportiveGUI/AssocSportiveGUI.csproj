@@ -12,6 +12,21 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -33,7 +48,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="BO, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\BO\bin\Debug\BO.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -46,16 +66,124 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="FrmAccueil.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="FrmAccueil.Designer.cs">
+      <DependentUpon>FrmAccueil.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmAdmin.Designer.cs">
+      <DependentUpon>FrmAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmAjoutBudget.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmAjoutBudget.Designer.cs">
+      <DependentUpon>FrmAjoutBudget.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmAjoutFlux.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmAjoutFlux.Designer.cs">
+      <DependentUpon>FrmAjoutFlux.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmModifieBudget.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmModifieBudget.Designer.cs">
+      <DependentUpon>FrmModifieBudget.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmAjoutEleve.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmAjoutEleve.Designer.cs">
+      <DependentUpon>FrmAjoutEleve.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmComptable.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmComptable.Designer.cs">
+      <DependentUpon>FrmComptable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmConnexion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmConnexion.Designer.cs">
+      <DependentUpon>FrmConnexion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmEcranStatistique.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmEcranStatistique.Designer.cs">
+      <DependentUpon>FrmEcranStatistique.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmGestionBudget.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmGestionBudget.Designer.cs">
+      <DependentUpon>FrmGestionBudget.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmGestionComptabilite.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmGestionComptabilite.Designer.cs">
+      <DependentUpon>FrmGestionComptabilite.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmGestionEleve.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmGestionEleve.Designer.cs">
+      <DependentUpon>FrmGestionEleve.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmModifieEleve.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmModifieEleve.Designer.cs">
+      <DependentUpon>FrmModifieEleve.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="FrmAccueil.resx">
+      <DependentUpon>FrmAccueil.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmAdmin.resx">
+      <DependentUpon>FrmAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmAjoutBudget.resx">
+      <DependentUpon>FrmAjoutBudget.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmAjoutFlux.resx">
+      <DependentUpon>FrmAjoutFlux.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmModifieBudget.resx">
+      <DependentUpon>FrmModifieBudget.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmAjoutEleve.resx">
+      <DependentUpon>FrmAjoutEleve.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmComptable.resx">
+      <DependentUpon>FrmComptable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmConnexion.resx">
+      <DependentUpon>FrmConnexion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmEcranStatistique.resx">
+      <DependentUpon>FrmEcranStatistique.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmGestionBudget.resx">
+      <DependentUpon>FrmGestionBudget.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmGestionComptabilite.resx">
+      <DependentUpon>FrmGestionComptabilite.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmGestionEleve.resx">
+      <DependentUpon>FrmGestionEleve.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmModifieEleve.resx">
+      <DependentUpon>FrmModifieEleve.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -78,6 +206,35 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BLL\AssocSportiveBLL.csproj">
+      <Project>{7f867d7e-1645-43d5-bae5-4d6e33f46b3f}</Project>
+      <Name>AssocSportiveBLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BO\AssocSportiveBO.csproj">
+      <Project>{bce6ac2c-abd8-45b1-bd2d-a9fd0e913a96}</Project>
+      <Name>AssocSportiveBO</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DAL\AssocSportiveDAL.csproj">
+      <Project>{5562d3fe-15b6-41ef-952f-9382a619e4b4}</Project>
+      <Name>AssocSportiveDAL</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 et x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
