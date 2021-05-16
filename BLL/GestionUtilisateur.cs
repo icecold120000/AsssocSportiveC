@@ -1,19 +1,21 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
+using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using DAL;
 using BO;
-using System.Configuration;
+using DAL;
 
 namespace BLL
 {
     public class GestionUtilisateurs
     {
-        private static GestionUtilisateurs uneGestionUtilisateurs;
+        private static GestionUtilisateurs uneGestionUtilisateurs; // objet BLL
 
-
+        // Accesseur en lecture
         public static GestionUtilisateurs GetGestionUtilisateurs()
         {
             if (uneGestionUtilisateurs == null)
@@ -23,32 +25,26 @@ namespace BLL
             return uneGestionUtilisateurs;
         }
 
+        // Définit la chaîne de connexion grâce à la méthode SetchaineConnexion
+        //de la DAL
         public static void SetchaineConnexion(ConnectionStringSettings chset)
         {
             string chaine = chset.ConnectionString;
             ConnexionBD.GetConnexionBD().SetchaineConnexion(chaine);
         }
-
-        // Méthode qui renvoit une List d'objets Utilisateur en faisant appel à la méthode GetUtilisateurs() de la DAL
-        public static List<Utilisateur> GetUtilisateurs()
+        // Méthode qui renvoit une List d'objets Utilisateur en faisant appel à
+        //la méthode GetUtilisateurs() de la DAL
+        public List<Utilisateur> GetUtilisateurs()
         {
             return UtilisateurDAO.GetUtilisateurs();
         }
 
-        // BD avec la méthode AjoutUtilisateur de la DAL
-        public static int CreerUtilisateur(Utilisateur ut)
+        public static void Connexion(string utiLogin, string utiMpd,
+            string utiDroit, SqlConnection maConnexion)
         {
-            return UtilisateurDAO.AjoutUtilisateur(ut);
+             UtilisateurDAO.Requete(utiLogin, utiMpd,
+             utiDroit, maConnexion);
         }
-        // Méthode qui modifie un nouvel Utilisateur avec la méthode UpdateUtilisateur de la DAL
-        public static int ModifierUtilisateur(Utilisateur ut)
-        {
-            return UtilisateurDAO.UpdateUtilisateur(ut);
-        }
-        // Méthode qui supprime un Utilisateur avec la méthodeDeleteUtilisateur de la DAL
-        public static int SupprimerUtilisateur(int id)
-        {
-            return UtilisateurDAO.DeleteUtilisateur(id);
-        }
+
     }
 }
