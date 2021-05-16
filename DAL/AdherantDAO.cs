@@ -210,7 +210,108 @@ namespace DAL
 
             return unAdherant;
         }
-    
+
+
+        public static List<AdherantBO> FiltreAdherant(string textSaisie)
+        {
+
+            int id;
+            string nom;
+            string prenom;
+            DateTime dateNaissance;
+            char sexe;
+            string email;
+            int numeroTel;
+            DateTime dateMaj;
+            int numParent;
+            int classe;
+            char prelevement;
+            string login;
+            string mdp;
+            char archive;
+            AdherantBO unAdherant;
+            List<AdherantBO> lesAdherants = new List<AdherantBO>();
+            // Connexion à la BD
+            SqlConnection maConnexion =
+            ConnexionBD.GetConnexionBD().GetSqlConnexion();
+
+            SqlCommand cmd = new SqlCommand("Select * from Adherant where nom_adherant Like @Nom" +
+                " or prenom_adherant like @Prenom", maConnexion);
+
+            SqlParameter adhNom =
+                new SqlParameter("@Nom", SqlDbType.VarChar);
+            SqlParameter adhPrenom =
+                new SqlParameter("@Prenom", SqlDbType.VarChar);
+
+            adhNom.Value = "%" + textSaisie + "%";
+            adhPrenom.Value = "%" + textSaisie + "%";
+
+            cmd.Parameters.Add(adhNom);
+            cmd.Parameters.Add(adhPrenom);
+
+            SqlDataReader monReader = cmd.ExecuteReader();
+
+            monReader.Read();
+
+            
+            id = Int32.Parse(monReader["id_adherant"].ToString());
+            if (monReader["nom_adherant"] == DBNull.Value)
+            {
+                nom = default(string);
+            }
+            else
+            {
+                nom = monReader["nom_adherant"].ToString();
+            }
+            if (monReader["prenom_adherant"] == DBNull.Value)
+            {
+                prenom = default(string);
+            }
+            else
+            {
+                prenom = monReader["prenom_adherant"].ToString();
+            }
+            dateNaissance = DateTime.Parse(monReader["ddn_adherant"].ToString());
+            sexe = Char.Parse(monReader["sexe_adherant"].ToString());
+            if (monReader["email_adherant"] == DBNull.Value)
+            {
+                email = default(string);
+            }
+            else
+            {
+                email = monReader["email_adherant"].ToString();
+            }
+            numeroTel = Int32.Parse(monReader["numtel_adherant"].ToString());
+            dateMaj = DateTime.Parse(monReader["date_maj_adherant"].ToString());
+            numParent = Int32.Parse(monReader["numparent_adherant"].ToString());
+            classe = Int32.Parse(monReader["id_classe"].ToString());
+            prelevement = Char.Parse(monReader["autoprelev_adherant"].ToString());
+            if (monReader["login_adherant"] == DBNull.Value)
+            {
+                login = default(string);
+            }
+            else
+            {
+                login = monReader["login_adherant"].ToString();
+            }
+            if (monReader["mdp_adherant"] == DBNull.Value)
+            {
+                mdp = default(string);
+            }
+            else
+            {
+                mdp = monReader["mdp_adherant"].ToString();
+            }
+            archive = Char.Parse(monReader["archive_adherant"].ToString());
+            unAdherant = new AdherantBO(id, nom, prenom, dateNaissance, sexe,
+                email, numeroTel, dateMaj, numParent, classe, prelevement, login, mdp,
+                archive);
+            lesAdherants.Add(unAdherant);
+            maConnexion.Close();
+
+            return lesAdherants;
+        }
+
 
         // Cette méthode insert un nouvel Adherant passé en paramètre dans
         //la BD
@@ -394,6 +495,63 @@ namespace DAL
             nbEnr = cmd.ExecuteNonQuery();
             // Fermeture de la connexion
             maConnexion.Close();
+            return nbEnr;
+        }
+
+        public static int CountTotalAdherant()
+        {
+
+            int nbEnr;
+            ConnexionBD.GetConnexionBD().CloseConnexion();
+            // Connexion à la BD
+
+            SqlConnection maConnexion =
+            ConnexionBD.GetConnexionBD().GetSqlConnexion();
+            SqlCommand cmd = new SqlCommand("Select count(id_adherant) from ADHERANT" , maConnexion);
+
+
+            nbEnr = (Int32)cmd.ExecuteScalar();
+            // Fermeture de la connexion
+            maConnexion.Close();
+
+            return nbEnr;
+        }
+
+        public static int CountAdherantParFille()
+        {
+
+            int nbEnr;
+            ConnexionBD.GetConnexionBD().CloseConnexion();
+            // Connexion à la BD
+
+            SqlConnection maConnexion =
+            ConnexionBD.GetConnexionBD().GetSqlConnexion();
+            SqlCommand cmd = new SqlCommand("Select count(id_adherant) from ADHERANT where sexe_adherant = 'F'", maConnexion);
+
+
+            nbEnr = (Int32)cmd.ExecuteScalar();
+            // Fermeture de la connexion
+            maConnexion.Close();
+
+            return nbEnr;
+        }
+
+        public static int CountAdherantParGarçon()
+        {
+
+            int nbEnr;
+            ConnexionBD.GetConnexionBD().CloseConnexion();
+            // Connexion à la BD
+
+            SqlConnection maConnexion =
+            ConnexionBD.GetConnexionBD().GetSqlConnexion();
+            SqlCommand cmd = new SqlCommand("Select count(id_adherant) from ADHERANT where sexe_adherant = 'G'", maConnexion);
+
+
+            nbEnr = (Int32)cmd.ExecuteScalar();
+            // Fermeture de la connexion
+            maConnexion.Close();
+
             return nbEnr;
         }
     }

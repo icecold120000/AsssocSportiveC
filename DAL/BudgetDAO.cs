@@ -71,12 +71,12 @@ namespace DAL
             ConnexionBD.GetConnexionBD().GetSqlConnexion();
             List<BudgetBO> lesBudgets = new List<BudgetBO>();
             // Création d'une liste vide d'objets Adherants
-            SqlCommand cmd = new SqlCommand(" SELECT * FROM BUDGET WHERE lbl_budget = @Libelle", maConnexion);
+            SqlCommand cmd = new SqlCommand(" SELECT * FROM BUDGET WHERE lbl_budget LIKE @Libelle", maConnexion);
 
             SqlParameter budLbl =
             new SqlParameter("@Libelle", SqlDbType.VarChar);
 
-            budLbl.Value = libelle;
+            budLbl.Value = "%" + libelle + "%";
 
             cmd.Parameters.Add(budLbl);
 
@@ -126,7 +126,7 @@ namespace DAL
             }
             else
             {
-                nom = monReader["nom_adherant"].ToString();
+                nom = monReader["lbl_budget"].ToString();
             }
             montant = Int32.Parse(monReader["montantInitial_budget"].ToString());
 
@@ -171,7 +171,7 @@ namespace DAL
             SqlConnection maConnexion =
             ConnexionBD.GetConnexionBD().GetSqlConnexion();
 
-            SqlCommand cmd = new SqlCommand("Update Budget set @Montant," +
+            SqlCommand cmd = new SqlCommand("Update Budget set montantInitial_budget = @Montant" +
                 " WHERE id = @IdBudget", maConnexion);
 
 
