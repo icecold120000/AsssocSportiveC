@@ -14,10 +14,19 @@ namespace BO
         private DateTime date_flux;
         private int id_adherent;
         private int id_type_flux;
-        private int id_event;
+        private int id_budget;
+
+        public Flux(string libelle_flux, int montant_flux, int id_adherent, int id_type_flux, int id_budget)
+        {
+            this.libelle_flux = libelle_flux;
+            this.montant_flux = montant_flux;
+            this.id_adherent = id_adherent;
+            this.id_type_flux = id_type_flux;
+            this.id_budget = id_budget;
+        }
 
         // Constructuer de l'Utilisateur
-        public Flux(int idFlux, string LibelleFlux, int montantFlux,DateTime DateFlux, int IdAdherent,int IdTypeFlux,int IdEvent)
+        public Flux(int idFlux, string LibelleFlux, int montantFlux,DateTime DateFlux, int IdAdherent,int IdTypeFlux,int IdBudget)
         {
             id_flux = idFlux;
             libelle_flux = LibelleFlux;
@@ -25,7 +34,7 @@ namespace BO
             date_flux = DateFlux;
             id_adherent = IdAdherent;
             id_type_flux = IdTypeFlux;
-            id_event = IdEvent;
+            id_budget = IdBudget;
         }
 
         public int Id { get => id_flux; set => id_flux = value; }
@@ -34,6 +43,6 @@ namespace BO
         public DateTime Date { get => date_flux; set => date_flux = value; }
         public int Id_adherent { get => id_adherent; set => id_adherent = value; }
         public int Id_type_flux { get => id_type_flux; set => id_type_flux = value; }
-        public int Id_event { get => id_event; set => id_event = value; }
+        public int Id_budget { get => id_budget; set => id_budget = value; }
     }
 }
