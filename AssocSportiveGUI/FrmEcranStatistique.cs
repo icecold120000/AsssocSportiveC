@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using BLL;
 
 namespace AssocSportiveGUI
 {
@@ -15,6 +16,23 @@ namespace AssocSportiveGUI
         public FrmEcranStatistique()
         {
             InitializeComponent();
+
+            int nombreTotal = 0;
+            int nbFilleInt = 0;
+            int nbGarçonInt = 0;
+
+
+            nombreTotal = GestionAdherant.NombreTotalAdherant();
+            nbFilleInt = GestionAdherant.NombreTotalAdherantFille();
+            nbGarçonInt = GestionAdherant.NombreTotalAdherantGarçon();
+
+            nbTotal.Text = nombreTotal.ToString();
+
+            nbFille.Text = nbFilleInt.ToString();
+
+            nbGarçon.Text = nbGarçonInt.ToString();
+            
+
         }
 
         private void gestionDesBudgetsToolStripMenuItem_Click(object sender, EventArgs e)
@@ -27,7 +45,10 @@ namespace AssocSportiveGUI
 
         private void présentationToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            
+            FrmAdmin GestionBudget;
+            GestionBudget = new FrmAdmin();
+            GestionBudget.ShowDialog();
+            GestionBudget.Close();
 
         }
 
@@ -54,6 +75,12 @@ namespace AssocSportiveGUI
             FrmConnect = new FrmConnexion();
             FrmConnect.ShowDialog(); // ouverture du formulaire
             FrmConnect.Close(); // fermeture du formulaire 
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+
         }
     }
 }

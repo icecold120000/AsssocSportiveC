@@ -29,6 +29,7 @@ namespace AssocSportiveGUI
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label7 = new System.Windows.Forms.Label();
             this.txtNumParents = new System.Windows.Forms.TextBox();
             this.txtMDP = new System.Windows.Forms.TextBox();
@@ -61,9 +62,14 @@ namespace AssocSportiveGUI
             this.optArchive1 = new System.Windows.Forms.RadioButton();
             this.lblArchive = new System.Windows.Forms.Label();
             this.optArchive2 = new System.Windows.Forms.RadioButton();
+            this.classeAdherent2 = new AssocSportiveGUI.ClasseAdherent2();
+            this.cLASSEBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.cLASSETableAdapter = new AssocSportiveGUI.ClasseAdherent2TableAdapters.CLASSETableAdapter();
             this.autoBox.SuspendLayout();
             this.sexeBox.SuspendLayout();
             this.archiveBox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.classeAdherent2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cLASSEBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // label7
@@ -225,6 +231,8 @@ namespace AssocSportiveGUI
             // 
             // lstClasse
             // 
+            this.lstClasse.DataSource = this.cLASSEBindingSource;
+            this.lstClasse.DisplayMember = "lbl_classe";
             this.lstClasse.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lstClasse.FormattingEnabled = true;
             this.lstClasse.ItemHeight = 22;
@@ -376,6 +384,20 @@ namespace AssocSportiveGUI
             this.optArchive2.Text = "N";
             this.optArchive2.UseVisualStyleBackColor = true;
             // 
+            // classeAdherent2
+            // 
+            this.classeAdherent2.DataSetName = "ClasseAdherent2";
+            this.classeAdherent2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // cLASSEBindingSource
+            // 
+            this.cLASSEBindingSource.DataMember = "CLASSE";
+            this.cLASSEBindingSource.DataSource = this.classeAdherent2;
+            // 
+            // cLASSETableAdapter
+            // 
+            this.cLASSETableAdapter.ClearBeforeFill = true;
+            // 
             // FrmModifieEleve
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -406,12 +428,15 @@ namespace AssocSportiveGUI
             this.Controls.Add(this.btnEnregistrer);
             this.Name = "FrmModifieEleve";
             this.Text = "FrmModifieEleve";
+            this.Load += new System.EventHandler(this.FrmModifieEleve_Load);
             this.autoBox.ResumeLayout(false);
             this.autoBox.PerformLayout();
             this.sexeBox.ResumeLayout(false);
             this.sexeBox.PerformLayout();
             this.archiveBox.ResumeLayout(false);
             this.archiveBox.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.classeAdherent2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cLASSEBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -450,5 +475,8 @@ namespace AssocSportiveGUI
         private System.Windows.Forms.RadioButton optArchive1;
         private System.Windows.Forms.Label lblArchive;
         private System.Windows.Forms.RadioButton optArchive2;
+        private ClasseAdherent2 classeAdherent2;
+        private System.Windows.Forms.BindingSource cLASSEBindingSource;
+        private ClasseAdherent2TableAdapters.CLASSETableAdapter cLASSETableAdapter;
     }
 }

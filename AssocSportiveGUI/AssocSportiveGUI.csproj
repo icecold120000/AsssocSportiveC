@@ -55,6 +55,7 @@
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -66,6 +67,26 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Adherent.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Adherent.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Budget.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Budget.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ClasseAdherent.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ClasseAdherent.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ClasseAdherent2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ClasseAdherent2.xsd</DependentUpon>
+    </Compile>
     <Compile Include="FrmAccueil.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -84,23 +105,29 @@
     <Compile Include="FrmAjoutBudget.Designer.cs">
       <DependentUpon>FrmAjoutBudget.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmAjoutEleve.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmAjoutEleve.Designer.cs">
+      <DependentUpon>FrmAjoutEleve.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmAjoutFlux.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmAjoutFlux.Designer.cs">
       <DependentUpon>FrmAjoutFlux.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmDetailAdherent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmDetailAdherent.Designer.cs">
+      <DependentUpon>FrmDetailAdherent.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmModifieBudget.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmModifieBudget.Designer.cs">
       <DependentUpon>FrmModifieBudget.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FrmAjoutEleve.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmAjoutEleve.Designer.cs">
-      <DependentUpon>FrmAjoutEleve.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmComptable.cs">
       <SubType>Form</SubType>
@@ -155,14 +182,17 @@
     <EmbeddedResource Include="FrmAjoutBudget.resx">
       <DependentUpon>FrmAjoutBudget.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmAjoutEleve.resx">
+      <DependentUpon>FrmAjoutEleve.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmAjoutFlux.resx">
       <DependentUpon>FrmAjoutFlux.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmDetailAdherent.resx">
+      <DependentUpon>FrmDetailAdherent.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmModifieBudget.resx">
       <DependentUpon>FrmModifieBudget.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FrmAjoutEleve.resx">
-      <DependentUpon>FrmAjoutEleve.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmComptable.resx">
       <DependentUpon>FrmComptable.cs</DependentUpon>
@@ -194,6 +224,50 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="Adherent.xsc">
+      <DependentUpon>Adherent.xsd</DependentUpon>
+    </None>
+    <None Include="Adherent.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Adherent.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Adherent.xss">
+      <DependentUpon>Adherent.xsd</DependentUpon>
+    </None>
+    <None Include="Budget.xsc">
+      <DependentUpon>Budget.xsd</DependentUpon>
+    </None>
+    <None Include="Budget.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Budget.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Budget.xss">
+      <DependentUpon>Budget.xsd</DependentUpon>
+    </None>
+    <None Include="ClasseAdherent.xsc">
+      <DependentUpon>ClasseAdherent.xsd</DependentUpon>
+    </None>
+    <None Include="ClasseAdherent.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ClasseAdherent.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ClasseAdherent.xss">
+      <DependentUpon>ClasseAdherent.xsd</DependentUpon>
+    </None>
+    <None Include="ClasseAdherent2.xsc">
+      <DependentUpon>ClasseAdherent2.xsd</DependentUpon>
+    </None>
+    <None Include="ClasseAdherent2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ClasseAdherent2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ClasseAdherent2.xss">
+      <DependentUpon>ClasseAdherent2.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

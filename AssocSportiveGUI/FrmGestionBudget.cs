@@ -37,7 +37,11 @@ namespace AssocSportiveGUI
             List<Flux> listeDebit = new List<Flux>();
             listeDebit = GestionFlux.GetFlux(2);
 
+
             // Rattachement de la List à la source de données du datagridview
+
+            dtgBudgetAS.ColumnHeadersVisible = false;
+            dtgBudgetEPS.ColumnHeadersVisible = false;
 
             dtgBudgetAS.DataSource = budgetInitialAS;
             dtgBudgetEPS.DataSource = budgetInitialEPS;
@@ -313,12 +317,18 @@ namespace AssocSportiveGUI
 
         private void btnAjoutCredit_Click(object sender, EventArgs e)
         {
-
+            FrmAjoutFlux FrmAjouterCredit;
+            FrmAjouterCredit = new FrmAjoutFlux(1);
+            FrmAjouterCredit.ShowDialog(); // ouverture du formulaire
+            FrmAjouterCredit.Close(); // fermeture du formulaire 
         }
 
         private void btnAjoutDébit_Click(object sender, EventArgs e)
         {
-
+            FrmAjoutFlux FrmAjouterDebit;
+            FrmAjouterDebit = new FrmAjoutFlux(2);
+            FrmAjouterDebit.ShowDialog(); // ouverture du formulaire
+            FrmAjouterDebit.Close(); // fermeture du formulaire 
         }
 
         private void btnAjouterBudget_Click(object sender, EventArgs e)

@@ -53,12 +53,18 @@ namespace AssocSportiveGUI
             this.btnAjoutCredit = new System.Windows.Forms.Button();
             this.btnAjoutDébit = new System.Windows.Forms.Button();
             this.btnAjouterBudget = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgBudgetEPS)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtgBudgetAS)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtgDebits)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtgCredits)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -93,7 +99,6 @@ namespace AssocSportiveGUI
             // 
             // menuStrip1
             // 
-            this.menuStrip1.GripMargin = new System.Windows.Forms.Padding(2, 2, 0, 2);
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.présentationToolStripMenuItem,
@@ -144,20 +149,20 @@ namespace AssocSportiveGUI
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(147, 385);
+            this.label2.Location = new System.Drawing.Point(112, 374);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(105, 20);
+            this.label2.Size = new System.Drawing.Size(140, 20);
             this.label2.TabIndex = 13;
-            this.label2.Text = "Budget EPS :";
+            this.label2.Text = "Budget EPS initial:";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(691, 385);
+            this.label3.Location = new System.Drawing.Point(656, 385);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(95, 20);
+            this.label3.Size = new System.Drawing.Size(130, 20);
             this.label3.TabIndex = 14;
-            this.label3.Text = "Budget AS :";
+            this.label3.Text = "Budget AS initial:";
             // 
             // dtgBudgetEPS
             // 
@@ -171,7 +176,7 @@ namespace AssocSportiveGUI
             this.dtgBudgetEPS.RowHeadersVisible = false;
             this.dtgBudgetEPS.RowHeadersWidth = 62;
             this.dtgBudgetEPS.RowTemplate.Height = 28;
-            this.dtgBudgetEPS.Size = new System.Drawing.Size(200, 93);
+            this.dtgBudgetEPS.Size = new System.Drawing.Size(181, 111);
             this.dtgBudgetEPS.TabIndex = 15;
             this.dtgBudgetEPS.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgBudgetEPS_CellContentClick);
             // 
@@ -180,19 +185,19 @@ namespace AssocSportiveGUI
             this.dtgBudgetAS.AllowUserToAddRows = false;
             this.dtgBudgetAS.AllowUserToDeleteRows = false;
             this.dtgBudgetAS.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgBudgetAS.Location = new System.Drawing.Point(792, 356);
+            this.dtgBudgetAS.Location = new System.Drawing.Point(792, 365);
             this.dtgBudgetAS.Name = "dtgBudgetAS";
             this.dtgBudgetAS.ReadOnly = true;
             this.dtgBudgetAS.RowHeadersVisible = false;
             this.dtgBudgetAS.RowHeadersWidth = 62;
             this.dtgBudgetAS.RowTemplate.Height = 28;
-            this.dtgBudgetAS.Size = new System.Drawing.Size(173, 93);
+            this.dtgBudgetAS.Size = new System.Drawing.Size(173, 111);
             this.dtgBudgetAS.TabIndex = 16;
             this.dtgBudgetAS.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgBudgetAS_CellContentClick);
             // 
             // btnActualiser
             // 
-            this.btnActualiser.Location = new System.Drawing.Point(522, 718);
+            this.btnActualiser.Location = new System.Drawing.Point(522, 861);
             this.btnActualiser.Name = "btnActualiser";
             this.btnActualiser.Size = new System.Drawing.Size(113, 62);
             this.btnActualiser.TabIndex = 17;
@@ -212,30 +217,30 @@ namespace AssocSportiveGUI
             // 
             // btnSupprimerDebits
             // 
-            this.btnSupprimerDebits.Location = new System.Drawing.Point(806, 726);
+            this.btnSupprimerDebits.Location = new System.Drawing.Point(806, 869);
             this.btnSupprimerDebits.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnSupprimerDebits.Name = "btnSupprimerDebits";
             this.btnSupprimerDebits.Size = new System.Drawing.Size(159, 46);
             this.btnSupprimerDebits.TabIndex = 26;
-            this.btnSupprimerDebits.Text = "btnSupprimerDebits";
+            this.btnSupprimerDebits.Text = "Supprimer un débit";
             this.btnSupprimerDebits.UseVisualStyleBackColor = true;
             this.btnSupprimerDebits.Click += new System.EventHandler(this.btnSupprimerDebits_Click);
             // 
             // btnSupprimerCredits
             // 
-            this.btnSupprimerCredits.Location = new System.Drawing.Point(237, 726);
+            this.btnSupprimerCredits.Location = new System.Drawing.Point(237, 869);
             this.btnSupprimerCredits.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnSupprimerCredits.Name = "btnSupprimerCredits";
             this.btnSupprimerCredits.Size = new System.Drawing.Size(180, 46);
             this.btnSupprimerCredits.TabIndex = 25;
-            this.btnSupprimerCredits.Text = "btnSupprimerCredits";
+            this.btnSupprimerCredits.Text = "Supprimer un crédit";
             this.btnSupprimerCredits.UseVisualStyleBackColor = true;
             this.btnSupprimerCredits.Click += new System.EventHandler(this.btnSupprimerCredits_Click);
             // 
             // dtgDebits
             // 
             this.dtgDebits.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgDebits.Location = new System.Drawing.Point(607, 514);
+            this.dtgDebits.Location = new System.Drawing.Point(607, 657);
             this.dtgDebits.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dtgDebits.Name = "dtgDebits";
             this.dtgDebits.RowHeadersWidth = 51;
@@ -247,7 +252,7 @@ namespace AssocSportiveGUI
             // dtgCredits
             // 
             this.dtgCredits.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgCredits.Location = new System.Drawing.Point(80, 514);
+            this.dtgCredits.Location = new System.Drawing.Point(80, 657);
             this.dtgCredits.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dtgCredits.Name = "dtgCredits";
             this.dtgCredits.RowHeadersWidth = 51;
@@ -259,7 +264,7 @@ namespace AssocSportiveGUI
             // FLUX
             // 
             this.FLUX.AutoSize = true;
-            this.FLUX.Location = new System.Drawing.Point(557, 474);
+            this.FLUX.Location = new System.Drawing.Point(557, 617);
             this.FLUX.Name = "FLUX";
             this.FLUX.Size = new System.Drawing.Size(51, 20);
             this.FLUX.TabIndex = 22;
@@ -267,7 +272,7 @@ namespace AssocSportiveGUI
             // 
             // btnAjoutCredit
             // 
-            this.btnAjoutCredit.Location = new System.Drawing.Point(249, 464);
+            this.btnAjoutCredit.Location = new System.Drawing.Point(249, 607);
             this.btnAjoutCredit.Name = "btnAjoutCredit";
             this.btnAjoutCredit.Size = new System.Drawing.Size(220, 41);
             this.btnAjoutCredit.TabIndex = 29;
@@ -277,7 +282,7 @@ namespace AssocSportiveGUI
             // 
             // btnAjoutDébit
             // 
-            this.btnAjoutDébit.Location = new System.Drawing.Point(756, 464);
+            this.btnAjoutDébit.Location = new System.Drawing.Point(756, 607);
             this.btnAjoutDébit.Name = "btnAjoutDébit";
             this.btnAjoutDébit.Size = new System.Drawing.Size(223, 41);
             this.btnAjoutDébit.TabIndex = 30;
@@ -295,11 +300,53 @@ namespace AssocSportiveGUI
             this.btnAjouterBudget.UseVisualStyleBackColor = true;
             this.btnAjouterBudget.Click += new System.EventHandler(this.btnAjouterBudget_Click);
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(26, 511);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(226, 20);
+            this.label4.TabIndex = 32;
+            this.label4.Text = "Montant réel des budgets EPS";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(570, 511);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(216, 20);
+            this.label5.TabIndex = 33;
+            this.label5.Text = "Montant réel des budgets AS";
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(258, 514);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersWidth = 62;
+            this.dataGridView1.RowTemplate.Height = 28;
+            this.dataGridView1.Size = new System.Drawing.Size(178, 68);
+            this.dataGridView1.TabIndex = 34;
+            // 
+            // dataGridView2
+            // 
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Location = new System.Drawing.Point(809, 514);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.RowHeadersWidth = 62;
+            this.dataGridView2.RowTemplate.Height = 28;
+            this.dataGridView2.Size = new System.Drawing.Size(156, 68);
+            this.dataGridView2.TabIndex = 35;
+            // 
             // FrmGestionBudget
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1219, 828);
+            this.ClientSize = new System.Drawing.Size(1219, 943);
+            this.Controls.Add(this.dataGridView2);
+            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.btnAjouterBudget);
             this.Controls.Add(this.btnAjoutDébit);
             this.Controls.Add(this.btnAjoutCredit);
@@ -327,6 +374,8 @@ namespace AssocSportiveGUI
             ((System.ComponentModel.ISupportInitialize)(this.dtgBudgetAS)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtgDebits)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtgCredits)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -357,5 +406,9 @@ namespace AssocSportiveGUI
         private System.Windows.Forms.Button btnAjoutCredit;
         private System.Windows.Forms.Button btnAjoutDébit;
         private System.Windows.Forms.Button btnAjouterBudget;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dataGridView2;
     }
 }

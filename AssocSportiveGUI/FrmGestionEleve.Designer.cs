@@ -46,11 +46,11 @@ namespace AssocSportiveGUI
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(345, 257);
+            this.label1.Location = new System.Drawing.Point(318, 257);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(485, 32);
+            this.label1.Size = new System.Drawing.Size(534, 32);
             this.label1.TabIndex = 13;
-            this.label1.Text = "Page de gestion de la comptabilité";
+            this.label1.Text = "Page de gestion des élèves adhérants";
             // 
             // btn_deconnexion
             // 

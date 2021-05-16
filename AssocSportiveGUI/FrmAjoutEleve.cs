@@ -441,6 +441,11 @@ namespace AssocSportiveGUI
             ActiveForm.Close();
         }
 
+        private void FrmModifieEleve_Load(object sender, EventArgs e)
+        {
+            // TODO: cette ligne de code charge les données dans la table 'classeAdherent2.CLASSE'. Vous pouvez la déplacer ou la supprimer selon les besoins.
+            this.cLASSETableAdapter.Fill(this.classeAdherent.CLASSE);
 
+        }
     }
 }
